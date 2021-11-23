@@ -1,13 +1,33 @@
 import React from "react";
 import { useForm } from 'react-hook-form'
 import logo from "../../../assets/img/logo.png"
+import { useUserContext } from '../../contexts/UserContext';
 
 const Form = () => {
     const {register, errors, handleSubmit} = useForm();
+    const { login, token } = useUserContext();
 
-    const onSubmitHandler = (data, e) =>{
-        console.log(data);
-        e.target.reset();
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+
+    const [error, setError] = useState(false);
+
+    const onChange = (e, save) => {
+        save(e.target.value);
+    }
+
+    const onSubmitHandler = async (e) => {
+        e.preventDefault();
+        const logged = await login(username, password);
+
+        setError(!logged);
+        setUsername("");
+        setPassword("");
+    }
+
+    if (token) {
+        console.log("Ya se loggea")
+        return <Navigate replace to="/redirect" />
     }
 
     return (
