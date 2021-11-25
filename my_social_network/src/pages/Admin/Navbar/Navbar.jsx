@@ -24,21 +24,29 @@ const Navbar = () => {
     return (
         <div className=" bg-red-400 fixed w-screen h-16 z-30 flex flex-row justify-around  " >
             <div className="flex flex-row justify-start w-6/12 items-center ">
-                <img className="h-full" src={logo}/>
-                <input className="m-1 w-full md:ml-20 px-4 h-3/6 md:w-3/6 " placeholder="Buscar" type="text"></input>
+                <Link className="w-16" to="/admin">
+                    <img className="h-16"  src={logo}/>
+                </Link>
+                <input className="m-1 w-9/12 md:ml-20 px-4 h-3/6 md:w-3/6 " placeholder="Buscar" type="text"></input>
                 
             </div>
             <div className="flex flex-row justify-between items-center">
-                <HomeIcon className="mx-8" fontSize="large"/>
-                <button onClick={onClickAccountHandler} ref={setReferenceElement}><AccountCircleIcon className="mr-8" fontSize="large"/></button>
+              
+             
+                    <HomeIcon className="mx-8" fontSize="large"/>
+                    <button onClick={onClickAccountHandler} ref={setReferenceElement}><AccountCircleIcon className="mr-8" fontSize="large"/></button>
+                
+            
                 
             </div>
             {options && <Portal>
                 <div className="bg-white rounded-lg  w-full md:w-60 z-40 flex flex-col" ref={setPopperElement} style={styles.popper} {...attributes.popper}>
+                    <Link to="/admin/profile/publicaciones">
                     <div className="p-1.5 flex flex-row justify-start hover:bg-gray-400 rounded-t-lg ">
                         <PersonIcon className="mx-4" fontSize="large"/>
                         <button>Perfil</button>
                     </div>
+                    </Link>
                     <div className="p-1.5 flex flex-row justify-start hover:bg-gray-400  ">
                         <FavoriteIcon className="mx-4" fontSize="large"/>
                         <button>Likes</button>

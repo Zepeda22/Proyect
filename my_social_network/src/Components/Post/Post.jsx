@@ -9,8 +9,8 @@ import ChatIcon from '@mui/icons-material/Chat'
 import ChatOutlinedIcon from '@mui/icons-material/ChatOutlined';
 import Comment from "./Comment/Comment";
 
-//import { RiChat4Line, RiChat4Fill } from "react-icons/ri";
-const Post = () => {
+//import { RiChat4Line, RiChat4Fill } from "react-icons/ri";https://picsum.photos/500/500
+const Post = ({post}) => {
   
     const [iconLike, setIconLike] = useState(<FavoriteBorderIcon className="stroke-current text-gray-500 hover:text-white" fontSize="large"/>)
     const [iconComment, setIconComment] = useState(<ChatOutlinedIcon fontSize="large"/>)
@@ -33,7 +33,7 @@ const Post = () => {
             setFormComment(<div></div>)
         }else{
             setIconComment(<ChatIcon fontSize="large"/>)
-            setFormComment(<Comment/>)
+            setFormComment(<Comment comments={post.comments}/>)
         }
     }
     
@@ -41,17 +41,23 @@ const Post = () => {
 
 
     return (
-            <div className="w-full bg-green-400  rounded-lg flex flex-col mt-3">
+            <div className="w-full bg-purple-700  rounded-lg flex flex-col mt-3">
                 <div className="w-full h-12  flex justify-center items-center hover:underline">
-                    Titulo
+                    {post.title}
                 </div>
-                <div className="w-full h-96"><img className="w-full h-full object-contain" src="https://picsum.photos/500/500"/></div>
-                <div className="w-full h-20 overflow-auto p-2 pt-2  bg-blue-300">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci expedita vitae vero et praesentium aliquam iusto consequuntur excepturi voluptatem reprehenderit quae mollitia incidunt voluptas placeat est, maiores aspernatur tenetur eos dolores suscipit voluptate sed, consequatur doloremque sunt.</div>
-                <div className="w-full h-16 flex flex-row justify-between items-center">
-                    <button  onClick={onClickLikeHandler} className="ml-6">{iconLike}</button>
-                    <button onClick={onClickCommentHandler} className="mr-6">{iconComment}</button>
+                <div className="w-full h-96"><img className="w-full h-full object-contain" src={post.image}/></div>
+                <div className="w-full h-20 overflow-auto p-2 pt-2  bg-blue-300">{post.description}</div>
+                <div className="w-full h-12 flex flex-row justify-between items-center">
+                    
+                        <button  onClick={onClickLikeHandler} className="ml-6">{iconLike}</button>
+                        <button onClick={onClickCommentHandler} className="mr-6">{iconComment}</button>
+                    
                     
                 </div>
+                <div className="w-full h-8 flex flex-row justify-between items-center">
+                        <p className="ml-6 text-red-400">{post.likes.length} Me gusta</p>
+                        <p className="mr-6 text-red-400">{post.comments.length} Comentarios</p>
+                    </div>
                 {formComment}
             </div>
     );

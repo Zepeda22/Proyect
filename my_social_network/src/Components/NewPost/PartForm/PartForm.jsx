@@ -44,7 +44,7 @@ const PartForm = () => {
         {loading}
         <img src={img}/>
         <textarea className="w-4/5 resize-none border rounded-md p-1 " placeholder="Descripcion"></textarea>
-        <button type="submit" onMouseEnter={onMouseEnterLikeHandler} onMouseLeave={onMouseLeaveLikeHandler} className={`self-end bg-purple-700 p-4 mr-16 mb-3 mt-1  rounded-lg ${animationClass}`  } id="send">Publicar</button>
+        <button type="submit" onMouseEnter={onMouseEnterLikeHandler} onMouseLeave={onMouseLeaveLikeHandler} className={`self-end bg-red-400 p-4 mr-16 mb-3 mt-1  rounded-lg ${animationClass}`  } id="send">Publicar</button>
         </div>
     );
 };
