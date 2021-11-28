@@ -1,8 +1,7 @@
 import React, {useState} from "react";
 import { useForm } from 'react-hook-form'
 import LoopIcon from '@mui/icons-material/Loop';
-const PartForm = () => {
-    const {register, errors, handleSubmit} = useForm();
+const PartForm = ({data}) => {
     const [img,setImg] = useState("")
     const [loading, setLoading] = useState(<div></div>)
     const [animationClass, setAnimationClass] = useState("animate-bounce");
@@ -18,10 +17,8 @@ const PartForm = () => {
         try {
             let a = await fetch(e.target.value)
             console.log(a)
-            if(a.redirected === true)
+            if(a.ok === true)
             {
-                console.log("hi helo")
-                //console.log(e.target.value);
                 setImg(e.target.value)
                 setLoading(<div></div>)
             }
@@ -40,10 +37,10 @@ const PartForm = () => {
     }  
     return (
         <div className="w-full h-full flex flex-col gap-y-4 justify-around items-center">
-        <input name="url" className="w-4/5 h-8  px-4 rounded-md border border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Pega una URL"  {...register("exampleRequired",{onChange: (e) =>  onChangeHandler(e)})}/>
+        <input name="url" className="w-4/5 h-8  px-4 rounded-md border border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Pega una URL"  {...data("image",{onChange: (e) =>  onChangeHandler(e)})}/>
         {loading}
         <img src={img}/>
-        <textarea className="w-4/5 resize-none border rounded-md p-1 " placeholder="Descripcion"></textarea>
+        <textarea className="w-4/5 resize-none border rounded-md p-1 " placeholder="Descripcion" {...data("description")}></textarea>
         <button type="submit" onMouseEnter={onMouseEnterLikeHandler} onMouseLeave={onMouseLeaveLikeHandler} className={`self-end bg-red-400 p-4 mr-16 mb-3 mt-1  rounded-lg ${animationClass}`  } id="send">Publicar</button>
         </div>
     );

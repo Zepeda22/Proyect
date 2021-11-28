@@ -4,18 +4,18 @@ const BASE_URL = "https://posts-pw2021.herokuapp.com/api/v1/post";
 export const useAdminServices = {
     createPost: async (post = {}, token) => {
         const { title, description, image} = post
-        //console.log({ username, password });
         const response = axios.post(`${BASE_URL}/create`, {
-            data:{
                 title: title,
                 description: description,
                 image: image
             },
-            headers: { 
-                Authorization: `Bearer ${token}` 
-            }
-        })
+            {
+                headers: {
+                    Authorization: `Bearer ${token}` 
+                }
+            })
             .then(response => {
+                console.log(response)
                 return response.data;
 
             })
@@ -29,10 +29,11 @@ export const useAdminServices = {
     ownedPosts: async (parameter = {}, token) => {
         const { limit, page} = parameter
         //console.log({ username, password });
-        const response = axios.get(`${BASE_URL}/owned`, {
+        const response = axios.get(`${BASE_URL}/owned`,
+        {
             data:{
-                limit: limit,
-                page: page
+                    limit: limit,
+                    page: page 
             },
             headers: { 
                 Authorization: `Bearer ${token}` 

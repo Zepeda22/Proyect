@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import Navbar from "../Admin/Navbar/Navbar";
 import { Route, Routes } from 'react-router-dom';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
@@ -8,6 +8,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
 import Posts from "./ViewPost/ViewPost"
 import {Link} from "react-router-dom";
+
 const Profile = () => {
 
     return (

@@ -60,7 +60,7 @@ export const useUserServices = {
     },
 
     patchLike: async (id ,token) => {
-        const response = axios.patch(`${BASE_URL}/like/${id}`, {
+        const response = axios.patch(`${BASE_URL}/like/${id}`,null, {
             headers: { 
                 Authorization: `Bearer ${token}` 
             }
@@ -77,7 +77,7 @@ export const useUserServices = {
     },
 
     patchFavorite: async (id ,token) => {
-        const response = axios.patch(`${BASE_URL}/fav/${id}`, {
+        const response = axios.patch(`${BASE_URL}/fav/${id}`,null, {
             headers: { 
                 Authorization: `Bearer ${token}` 
             }
@@ -94,14 +94,7 @@ export const useUserServices = {
     },
 
     addComment: async (comment, id ,token) => {
-        const response = axios.patch(`${BASE_URL}/comment/${id}`, {
-            data:{
-                description: comment
-            },
-            headers: { 
-                Authorization: `Bearer ${token}` 
-            }
-        })
+        const response = axios.patch(`${BASE_URL}/comment/${id}`,{description: comment},{headers: {Authorization: `Bearer ${token}`}})
             .then(response => {
                 return response.data;
 
