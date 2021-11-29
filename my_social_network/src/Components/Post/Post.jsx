@@ -8,17 +8,26 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ChatIcon from '@mui/icons-material/Chat'
 import ChatOutlinedIcon from '@mui/icons-material/ChatOutlined';
 import Comment from "./Comment/Comment";
+import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
+import BookmarkIcon from '@mui/icons-material/Bookmark';
 import { useUserContext } from "../../Contexts/UserContext";
 import { useUserServices } from "../../Services/PW2021/User.services";
 //import { RiChat4Line, RiChat4Fill } from "react-icons/ri";https://picsum.photos/500/500
-const Post = ({post}) => {
+const Post = ({post, favPosts}) => {
     const context = useUserContext();
     const [iconLike, setIconLike] = useState(<FavoriteBorderIcon className=" text-red-400 hover:text-red-500" fontSize="large"/>)
+    const [iconFav, setIconFav] = useState(<BookmarkBorderIcon className=" text-red-400 hover:text-red-500" fontSize="large"/>)
     const [iconComment, setIconComment] = useState(<ChatOutlinedIcon className=" text-red-400 hover:text-red-500" fontSize="large"/>)
     const [formComment, setFormComment] = useState(<div></div>)
 
     useEffect(() => {
-        
+        favPosts.map(favPost => {
+            if(post._id == favPost){
+                setIconFav(<BookmarkIcon className=" text-red-500" fontSize="large"/>)
+            }
+        }
+
+        )
         post.likes.map(user => {
             //console.log(context.user)
             if(user.username == context.user.username){
@@ -53,13 +62,21 @@ const Post = ({post}) => {
         }
     }
     
+    const onClickFavHandler = async () =>{
+        const token = context.getToken();
+        const response = await useUserServices.patchFavorite(post._id ,token) 
+        console.log(response)
+        console.log(response.data)
+        iconFav.type.type.render.displayName === "BookmarkIcon"? setIconFav(<BookmarkBorderIcon className=" text-red-400 hover:text-red-500" fontSize="large"/>):setIconFav(<BookmarkIcon className=" text-red-500" fontSize="large"/>)
+    }
 
 
 
     return (
             <div className="w-full bg-purple-700  rounded-lg flex flex-col mt-3">
                 <div className="w-full h-12  flex justify-center items-center hover:underline">
-                    {`${post.user.username} - ${post.title} - ${post._id}`}
+                    <div>{`${post.user.username} - ${post.title} - ${post._id}`}</div>
+                    <div><button  onClick={onClickFavHandler} className="ml-6">{iconFav}</button></div>
                 </div>
                 <div className="w-full h-96"><img className="w-full h-full object-contain" src={post.image}/></div>
                 <div className="w-full h-20 overflow-auto p-2 pt-2  bg-purple-700 ">{post.description}</div>

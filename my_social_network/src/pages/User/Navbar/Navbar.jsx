@@ -24,7 +24,7 @@ const Navbar = () => {
     return (
         <div className=" bg-red-400 fixed w-screen h-16 z-30 flex flex-row justify-around  " >
             <div className="flex flex-row justify-start w-6/12 items-center ">
-                <Link className="w-16" to="/admin">
+                <Link className="w-16" to="/user">
                     <img className="h-16"  src={logo}/>
                 </Link>
                 <input className="m-1 w-9/12 md:ml-20 px-4 h-3/6 md:w-3/6 " placeholder="Buscar" type="text"></input>
@@ -32,7 +32,7 @@ const Navbar = () => {
             </div>
             <div className="flex flex-row justify-between items-center">
               
-                    <Link to="/admin">
+                    <Link to="/user">
                         <HomeIcon className="mx-8" fontSize="large"/>
                     </Link>
                     <button onClick={onClickAccountHandler} ref={setReferenceElement}><AccountCircleIcon className="mr-8" fontSize="large"/></button>
@@ -42,13 +42,13 @@ const Navbar = () => {
             </div>
             {options && <Portal>
                 <div className="bg-white rounded-lg  w-full md:w-60 z-40 flex flex-col" ref={setPopperElement} style={styles.popper} {...attributes.popper}>
-                    <Link to="/admin/profile/publicaciones">
+                    <Link to="/user/profile/publicaciones">
                     <div className="p-1.5 flex flex-row justify-start hover:bg-gray-400 rounded-t-lg ">
                         <PersonIcon className="mx-4" fontSize="large"/>
                         <button>Perfil</button>
                     </div>
                     </Link>
-                    <Link to="/admin/profile/favoritos">
+                    <Link to="/user/profile/favoritos">
                     <div className="p-1.5 flex flex-row justify-start hover:bg-gray-400  ">
                         <BookmarkIcon className="mx-4" fontSize="large"/>
                         <button>Favoritos</button>

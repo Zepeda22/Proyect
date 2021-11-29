@@ -1,7 +1,7 @@
 import React, {useEffect, useState, useRef} from "react";
 import Post from "../../Components/Post/Post"
 import NewPost from "../../Components/NewPost/NewPost"
-import Navbar from "./Navbar/Navbar";
+import Navbar from "../User/Navbar/Navbar";
 import { useUserContext } from "../../Contexts/UserContext";
 import { useUserServices } from "../../Services/PW2021/User.services";
 import { set } from "react-hook-form";
@@ -9,7 +9,7 @@ import { set } from "react-hook-form";
 var page = 0;
 var posts = [];
 var favPosts = [];
-const Admin = () => {
+const User = () => {
   const context = useUserContext();
   const [renderPosts, setRenderPosts] = useState([]);
   //const [page, setPage] = useState(0);
@@ -81,8 +81,7 @@ const Admin = () => {
         <div className="min-h-screen  h-full bg-scroll bg-repeat bg-purple-400  grid grid-cols-6">
             <Navbar/>
             <div className="col-start-1 col-span-6 sm:col-start-2 sm:col-span-4 xl:col-start-3 xl:col-span-2">
-                <NewPost /> 
-                <div>
+                <div className="mt-20">
                 {
                   renderPosts.map( post => {
                   return <Post
@@ -125,4 +124,4 @@ const Admin = () => {
     );
 };
 
-export default Admin;
+export default User;
