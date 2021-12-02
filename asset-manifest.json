@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/zepeda22.github.io/static/css/main.ac715131.chunk.css",
-    "main.js": "/zepeda22.github.io/static/js/main.1d537107.chunk.js",
-    "main.js.map": "/zepeda22.github.io/static/js/main.1d537107.chunk.js.map",
-    "runtime-main.js": "/zepeda22.github.io/static/js/runtime-main.22e2a95c.js",
-    "runtime-main.js.map": "/zepeda22.github.io/static/js/runtime-main.22e2a95c.js.map",
-    "static/js/2.751e9fc6.chunk.js": "/zepeda22.github.io/static/js/2.751e9fc6.chunk.js",
-    "static/js/2.751e9fc6.chunk.js.map": "/zepeda22.github.io/static/js/2.751e9fc6.chunk.js.map",
-    "index.html": "/zepeda22.github.io/index.html",
-    "static/css/main.ac715131.chunk.css.map": "/zepeda22.github.io/static/css/main.ac715131.chunk.css.map",
-    "static/js/2.751e9fc6.chunk.js.LICENSE.txt": "/zepeda22.github.io/static/js/2.751e9fc6.chunk.js.LICENSE.txt",
-    "static/media/logo.c1b39f1b.png": "/zepeda22.github.io/static/media/logo.c1b39f1b.png"
+    "main.css": "/Proyect/static/css/main.ac715131.chunk.css",
+    "main.js": "/Proyect/static/js/main.1d537107.chunk.js",
+    "main.js.map": "/Proyect/static/js/main.1d537107.chunk.js.map",
+    "runtime-main.js": "/Proyect/static/js/runtime-main.49aec78e.js",
+    "runtime-main.js.map": "/Proyect/static/js/runtime-main.49aec78e.js.map",
+    "static/js/2.751e9fc6.chunk.js": "/Proyect/static/js/2.751e9fc6.chunk.js",
+    "static/js/2.751e9fc6.chunk.js.map": "/Proyect/static/js/2.751e9fc6.chunk.js.map",
+    "index.html": "/Proyect/index.html",
+    "static/css/main.ac715131.chunk.css.map": "/Proyect/static/css/main.ac715131.chunk.css.map",
+    "static/js/2.751e9fc6.chunk.js.LICENSE.txt": "/Proyect/static/js/2.751e9fc6.chunk.js.LICENSE.txt",
+    "static/media/logo.c1b39f1b.png": "/Proyect/static/media/logo.c1b39f1b.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.22e2a95c.js",
+    "static/js/runtime-main.49aec78e.js",
     "static/js/2.751e9fc6.chunk.js",
     "static/css/main.ac715131.chunk.css",
     "static/js/main.1d537107.chunk.js"
