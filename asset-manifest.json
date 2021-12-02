@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/login/static/css/main.ac715131.chunk.css",
-    "main.js": "/login/static/js/main.034ed004.chunk.js",
-    "main.js.map": "/login/static/js/main.034ed004.chunk.js.map",
-    "runtime-main.js": "/login/static/js/runtime-main.4ed23f28.js",
-    "runtime-main.js.map": "/login/static/js/runtime-main.4ed23f28.js.map",
-    "static/js/2.9622f583.chunk.js": "/login/static/js/2.9622f583.chunk.js",
-    "static/js/2.9622f583.chunk.js.map": "/login/static/js/2.9622f583.chunk.js.map",
-    "index.html": "/login/index.html",
-    "static/css/main.ac715131.chunk.css.map": "/login/static/css/main.ac715131.chunk.css.map",
-    "static/js/2.9622f583.chunk.js.LICENSE.txt": "/login/static/js/2.9622f583.chunk.js.LICENSE.txt",
-    "static/media/logo.c1b39f1b.png": "/login/static/media/logo.c1b39f1b.png"
+    "main.css": "/zepeda22.github.io/static/css/main.ac715131.chunk.css",
+    "main.js": "/zepeda22.github.io/static/js/main.1d537107.chunk.js",
+    "main.js.map": "/zepeda22.github.io/static/js/main.1d537107.chunk.js.map",
+    "runtime-main.js": "/zepeda22.github.io/static/js/runtime-main.22e2a95c.js",
+    "runtime-main.js.map": "/zepeda22.github.io/static/js/runtime-main.22e2a95c.js.map",
+    "static/js/2.751e9fc6.chunk.js": "/zepeda22.github.io/static/js/2.751e9fc6.chunk.js",
+    "static/js/2.751e9fc6.chunk.js.map": "/zepeda22.github.io/static/js/2.751e9fc6.chunk.js.map",
+    "index.html": "/zepeda22.github.io/index.html",
+    "static/css/main.ac715131.chunk.css.map": "/zepeda22.github.io/static/css/main.ac715131.chunk.css.map",
+    "static/js/2.751e9fc6.chunk.js.LICENSE.txt": "/zepeda22.github.io/static/js/2.751e9fc6.chunk.js.LICENSE.txt",
+    "static/media/logo.c1b39f1b.png": "/zepeda22.github.io/static/media/logo.c1b39f1b.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.4ed23f28.js",
-    "static/js/2.9622f583.chunk.js",
+    "static/js/runtime-main.22e2a95c.js",
+    "static/js/2.751e9fc6.chunk.js",
     "static/css/main.ac715131.chunk.css",
-    "static/js/main.034ed004.chunk.js"
+    "static/js/main.1d537107.chunk.js"
   ]
 }
